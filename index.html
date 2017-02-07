@@ -1,0 +1,51 @@
+---
+title: Blog
+layout: default
+---
+
+<nav class="pills">
+    <ul>
+        <li class="by-date active"><a href="/archive/#by-date">By date</a></li>
+        <li class="by-category"><a href="/archive/#by-category">By category</a></li>
+    </ul>
+</nav>    
+    
+<div class="by-date archive plain-links">
+    <h2>All posts</h2>
+    <table>
+        <tbody>
+            {% for post in site.posts %}
+                <tr>
+                    <td class="date">{{post.date | date: '%d %b %Y'}}</td>
+                    <td class="arrow">→</td>
+                    <td class="title"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<div class="by-category archive plain-links hide">
+    {% for category in site.categories %}
+    <h2 class="category-title" id="{{ category | first | remove:' ' }}">{{ category | first }}</h2>
+        <table>
+            <tbody>
+               {% for posts in category %}
+                    {% for post in posts %}
+                        {% if post.url %}
+                        <tr>
+                            <td class="date">{{post.date | date: '%d %b %Y'}}</td>
+                            <td class="arrow">→</td>
+                            <td class="title"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+               {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+</div>
+
+
+{% include fragments.html %}

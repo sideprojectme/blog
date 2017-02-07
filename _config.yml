@@ -1,0 +1,11 @@
+#Created by webjeda
+
+title: Munidra Nath
+baseurl: /thinking
+# Tracker
+analytics: 
+
+sass:
+  style: compressed
+  
+include: [_pages]

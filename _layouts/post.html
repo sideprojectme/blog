@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<h1>{{page.title}}</h1>
+<p>{{page.date | date: '%d %b %Y'}}</p>
+
+{{content}}
+
+
+<hr class="separator">
+
+
+<footer>
+    <nav class="next-previous-post">
+         {% if page.previous.url %}
+            <p class="nav-previous-post">
+            <a href="{{site.baseurl}}{{page.previous.url}}">
+            ←&nbsp;{{page.previous.title}}</a>
+            </p>
+        {% endif %}
+
+        {% if page.next.url %}
+            <p class="nav-next-post">
+            <a href="{{site.baseurl}}{{page.next.url}}">
+            {{page.next.title}}&nbsp;→</a>
+            </p>
+        {% endif %}
+    </nav>
+</footer>

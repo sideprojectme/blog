@@ -1,0 +1,458 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300,700,300italic);
+@import url(//fonts.googleapis.com/css?family=Anonymous+Pro:400);
+
+
+/*********************************************************/
+/* #mark Font and layout */
+
+@media screen and (max-width: 399px) {
+    html {
+        font-size: 13pt;
+    }
+    body {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 1399px) and (min-width: 400px) {
+    html {
+        font-size: 13pt;
+    }
+    body {
+        max-width: 100vw;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    html {
+        font-size: 15pt;
+    }
+}
+
+body {
+    width: 37.5em;
+    padding: 0 0.75em;
+    margin: 0 auto;
+    font-family: Lato, Verdana, sans-serif;
+    color: black;
+    line-height: 1.5;
+    font-style: normal;
+/*     min-height: 80em; fix iphone zoom on short pages */
+    -webkit-text-size-adjust: 100%;
+}
+
+/*********************************************************/
+/* #mark Site title and navigation */
+
+.masthead {
+ /*    background-color: #CCC; */
+    margin: 0 -1.125em 1.5em -1.125em;
+    padding: 0.75em 1.125em;
+/*     border-right: 1px black solid;
+    border-bottom: 1px black solid;
+    border-left: 1px black solid; */
+    @include media-query($on-palm) {
+        text-align: center;
+        margin: 1em;
+        padding: 0.25em;
+  
+    }
+    
+    & h1 {
+        display:inline-block;
+        @include media-query($on-palm) {
+            display: block;
+            font-size: 3em;
+            line-height: 1;
+        }
+    }
+
+    & h2 {
+        display:inline-block;
+        @include media-query($on-palm) {
+            display: block;
+            font-size: 2em;
+            line-height: 0.5;
+        }
+    }  
+    
+}
+
+.site-title {
+    font-size: 3em;
+    line-height: 1;
+    padding-bottom: 0.45ex;
+    margin: 0px;
+    font-weight: bold;
+}
+
+
+
+/*********************************************************/
+/* #mark Section and article headings */
+h1 {
+    font-size: 2em;
+    margin: 1.2rem 0px;
+}
+
+p.date, p.date > a {
+    margin: 1.2em 0px;
+    color: #888;
+    text-decoration: none;
+}
+
+p {
+    margin: 1em 0px;
+}
+
+footer {
+    margin: 2em 0em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+}
+
+hr.separator,
+hr.blank {
+    border-width: 0;
+    color: #888888;
+    text-align: center;
+    margin: 4em 0;
+}
+
+hr.separator:after {
+    content: "ooooo";
+    letter-spacing: 3em;
+    font-size: 60%;
+}
+
+/* Links */
+a:link {
+    color: $brand-color;
+}
+
+a:visited {
+    color: #17537E;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+header a:link, header a:visited, .plain-links a:link, .plain-links a:visited {
+    text-decoration: none;
+}
+
+ header h2 {
+    color: black;
+     &:hover {
+        color: #268bd2; 
+     }
+}
+
+/*********************************************************/
+/* #mark Misc */
+
+.struck {
+    text-decoration: line-through;
+}
+
+.hide {
+    display: none;
+}
+
+nav.pills ul {
+    margin: 1em 0em 2em 1.5em;
+    padding: 0px;
+    list-style-type: none;
+    line-height: 1.2;
+}
+
+nav.pills li {
+    margin: 0px;
+    display: inline;
+}
+
+nav.pills a {
+    padding: 0.15em 0.6em;
+    text-decoration: none;
+}
+
+nav.pills .active  a {
+    background-color: #6cb2e4;
+    color: black;
+}
+
+p.nav-previous-post {
+    display: block;
+    float: left;
+    max-width: 90%;
+    margin: 0;
+    padding: 0 1em 0 0;
+    text-align: left;
+}
+
+p.nav-next-post {
+    display: block;
+    float: right;
+    max-width: 90%;
+    margin: 0;
+    padding: 0 0 0 1em;
+    text-align: right;
+}
+
+nav.next-previous-post {
+    overflow: auto; /* contain floats */
+}
+
+
+ol ol {
+    list-style-type: lower-alpha;
+}
+
+
+/* Archive table */
+.archive td {
+    vertical-align: top;
+}
+
+div.archive {
+    margin-bottom: 3em;
+}
+
+.archive td.date {
+    text-align: right;
+    width: 6.5em;
+}
+
+/*break between years*/
+.row-10 > td,
+.row-01 > td {
+    padding-bottom: 2.5em;
+}
+
+
+/*********************************************************/
+/* #mark Images */
+
+img {
+    max-width: 100%;
+}
+
+
+img.full {
+    width: 500px;
+    border-width: 0px;
+}
+
+img.centered,
+img.center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+}
+
+.wide {
+    max-width: 100%;
+}
+
+/* Floats */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+/*********************************************************/
+/* Code and syntax highlighting */
+
+pre code {
+    overflow: auto;
+    display: block;
+    padding:0em 0.5em;
+    margin: 0em 0.25em;
+    background-color: #fdf6e3;
+    color: #002b36;
+    border: 1px solid #93a1a1;
+    font-size: 85%;
+    line-height: 1.3;
+}
+
+code {
+    font-family: 'Anonymous pro', Consolas, "Courier New", monospace;
+    color: #cb4b16;
+    margin-left: 0.20em;
+    margin-right: 0.10em;
+}
+
+/* comment and other greyed-out classes */
+.highlight .lineno,
+.highlight .c,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs {
+    color: #93a1a1;
+}
+
+
+/* keyword classes */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .ow,
+.highlight .ld {
+    color: #268bd2;
+}
+
+/* numbers */
+.highlight .il,
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+    color: #6c71c4;
+}
+
+/* constants, etc. */
+.highlight .nc,
+.highlight .no,
+.highlight .nd,
+.highlight .ni,
+.highlight .ne,
+.highlight .nf,
+.highlight .nl,
+.highlight .nn,
+.highlight .nx,
+.highlight .nv {
+    color: #6c71c4;
+}
+
+/* string-like */
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .gi,
+.highlight .ss {
+    color: #2aa198;
+}
+
+/* red */
+.highlight .gd,
+.highlight .err {
+    color: #cb4b16;
+}
+
+.highlight .lineno {
+    font-size: 85%;
+}
+
+.rmlno {
+    font-size: 80%;
+    text-align: right;
+    margin-bottom: -2ex;
+    margin-right: 0.5em;
+}
+
+.rmlno a {
+    text-decoration: none;
+}
+
+.rmlno a:hover {
+    text-decoration: underline;
+}
+
+/*********************************************************/
+/* #mark Print */
+
+@media print {
+    html {
+        font-size: 10pt;
+    }
+
+    .masthead {
+        border-width: 0px;
+    }
+
+    .no-print {
+        display: none;
+    }
+}
+
+/*********************************************************/
+/* #mark iPhone */
+
+@media only screen and (max-device-width: 480px) {
+    .masthead {
+        border-right: 0px;
+        border-left: 0px;
+    }
+}
+
+.category-title {
+    text-transform: capitalize;
+}
+
+/*********************************************************/
+/* Video size - Add class="video" to video embeds so that they resize according to the screensize */
+
+.video {
+    width: 100%;
+    height: 360px;
+    @include media-query($on-palm) {
+        height: 200px;
+    }
+}
+
+#search-container {
+    display: inline-block;
+}
+
+#results-container {
+    list-style: none;
+}
+
+#search-input {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+.home-title {
+    a {
+        color: #477DCA
+    }
+   
+}
+
+ h1 a {
+         color: #555 !important
+        
+    }
