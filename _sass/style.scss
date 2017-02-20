@@ -44,13 +44,12 @@ body {
  /*    background-color: #CCC; */
     margin: 0 -1.125em 1.5em -1.125em;
     padding: 0.75em 1.125em;
-     letter-spacing: -1px;   
 
 /*     border-right: 1px black solid;
     border-bottom: 1px black solid;
     border-left: 1px black solid; */
     @include media-query($on-palm) {
-        text-align: center;
+
         margin: 1em;
         padding: 0.25em;
   
